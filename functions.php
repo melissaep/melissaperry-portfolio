@@ -43,11 +43,13 @@ We'll let WordPress add them to our templates automatically instead
 of writing our own link tags in the header. */
 
 function hackeryou_styles(){
-	wp_enqueue_style('style', get_stylesheet_uri() );
-
 	wp_enqueue_style('fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
 
 	wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,300,700');
+
+	wp_enqueue_style('devicon', 'https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css');
+
+	wp_enqueue_style('style', get_stylesheet_uri() );
 }
 
 add_action( 'wp_enqueue_scripts', 'hackeryou_styles');

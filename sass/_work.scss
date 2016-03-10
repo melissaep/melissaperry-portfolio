@@ -1,0 +1,15 @@
+ul.portfolio {
+	display: flex;
+	flex-direction: column;
+}
+.portfolioItem {
+	display: flex;
+	flex-direction: row;
+	margin: 400px 0;
+	figure {
+		width: 40%;
+	}
+	.info {
+		width: 60%;
+	}
+}
