@@ -1,9 +1,11 @@
-<footer>
-  <div class="container">
-    <p>&copy; HackerYou <?php echo date('Y'); ?></p>
-  </div>
-</footer>
+	<footer>
+	  <div class="container">
+	    <p>Coded with love by Melissa Perry</p>
+	  </div>
+	</footer>
+</main>
 
+<!-- /.main -->
 <script>
 // scripts.js, plugins.js and jquery are enqueued in functions.php
 /* Google Analytics! */

@@ -2,13 +2,74 @@ ul.menu {
 	margin: 0;
 	padding: 0;
 	li {
-		display: inline;
-		margin-right: 10px;
+		margin: 0;
+		padding: 0;
+		list-style: none;
 		a {
 			color: #333;
-			padding: 10px;
-			background: #333;
-			color: white;
+			text-transform: uppercase;
+		}
+	}
+}
+
+.sideNav {
+	position: relative;
+	top:50%;
+	transform: translate(0, -50%);
+	margin-left: 20px;
+	.progressBar {
+		position: absolute;
+		top: 10%;
+		left: 0;
+		height: 8px;
+		width: 140px;
+		background: $rgbacyan;
+		z-index: -1;
+	}
+	&::after {
+		content: ' ';
+		display: block;
+		width: 5px;
+		height: 80%;
+		background: $lightgrey;
+		position: absolute;
+		left: 13px;
+		top: 10%;
+		z-index: -2;
+	}
+	ul.menu {
+		display: flex;
+		flex-direction: column;
+		.nav-active {
+			a {
+				color: $darkgrey;
+			}
+		}
+		li {
+		}
+		a {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			color: $medgrey;
+			&:hover {
+				color: $darkgrey;
+			}
+		}
+		span.title {
+			@include fontSizer(12);
+			font-weight: 400;
+			padding-left: 15px;
+			letter-spacing: 1px;
+		}
+		span.number {
+			padding-top: 7px;
+			@include fontSizer(50);
+			font-weight: 700;
+			display: block;
+			width: 30px;
+			float: left;
+			text-align: center;
 		}
 	}
 }

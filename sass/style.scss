@@ -8,6 +8,8 @@
 */
 
 @import 'normalize';
+@import 'brand';
+@import 'mixins';
 @import 'typography';
 @import 'navigation';
 @import 'sidebar';
@@ -19,17 +21,32 @@ Default Styling
 ====================================
 */
 
-img {
-	max-width: 100%;
+html {
+	font-size: 62.5%;
 }
 
 body {
 	color: #333;
+	font-family: $mainFont;
+	font-size: 16px;
+}
+
+main {
+	width: 100%;
+	position: absolute;
+}
+
+img {
+	max-width: 100%;
 }
 
 .container {
 	max-width: 1200px;
 	margin: 0 auto;
+}
+
+.inner-wrapper {
+	margin-left: 20%;
 }
 
 .content {
@@ -40,6 +57,35 @@ body {
 
 .full {
 	width: 100%;
+}
+
+header {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+h1,
+p.tagline {
+	padding: 0;
+	margin: 0;
+	text-transform: uppercase;
+	font-weight: 700;
+	line-height: 1;
+	text-align: center;
+}
+
+h1 {
+	@include fontSizer(100);
+	text-shadow: 6px 8px 0 $cyan;
+	letter-spacing: 3px;
+}
+
+p.tagline {
+	@include fontSizer(34);
+	color: $darkgrey;
 }
 
 
