@@ -1,34 +1,37 @@
 <?php get_header();  ?>
 
 <!-- Sidebar -->
-<aside>
-  <nav class="sideNav">
-    <div class="progressBar"></div>
-    <?php wp_nav_menu( array(
-        'container' => false,
-        'theme_location' => 'primary'
-      )); ?>
-  </nav>
-</aside>
 <!-- /. Sidebar -->
 
 <!-- Main Content -->
 <main>
   <header id="home">
-  
-    <figure class="logo container">
+    <object type="image/svg+xml" data="wp-content/themes/portfolio/images/logo.svg"></object>
+    <!-- <div class="logo container">
       <h1>Melissa</h1>
       <h1>Perry</h1>
       <p class="tagline">Frontend</p>
       <p class="tagline">Web Developer</p>      
-    </figure> <!-- /.container -->
-
+    </div> <!-- /.container -->
   </header><!--/.header-->
 
 
 
 <div class="main">
   <div class="container">
+  
+  <aside>
+    <div class="innerNav">
+      <object class="navLogo hidden" type="image/svg+xml" data="wp-content/themes/portfolio/images/smallLogo.svg"></object>
+      <nav class="sideNav">
+        <div class="progressBar"></div>
+        <?php wp_nav_menu( array(
+            'container' => false,
+            'theme_location' => 'primary'
+          )); ?>
+      </nav>
+    </div>
+  </aside>
 
   <section id="about">
     <div class="inner-wrapper">
@@ -89,32 +92,31 @@
 
       <h2>Skills</h2>
 
-      <h2>Current</h2>
+      <h2 class="skillLabel">Current</h2>
+      
+      <ul class="skillsList skillsList1">
+        <?php while(has_sub_field('skill')): ?>
+          <?php if (get_sub_field('skill_type') == 'current') {?>
+            <li class="singleSkill">
+              <i class="<?php the_sub_field('skill_icon') ?>"></i>
+              <p><?php the_sub_field('skill_name') ?></p>
+            </li>
+          <?php }; ?>
+        <?php endwhile; ?> 
+      </ul>
 
-      <?php while(has_sub_field('skill')): ?>
+      <h2 class="skillLabel">Coming Soon</h2>
 
-        <?php if (get_sub_field('skill_type') == 'current') {?>
-          <div class="singleSkill">
-            <i class="<?php the_sub_field('skill_icon') ?>"></i>
-            <p><?php the_sub_field('skill_name') ?></p>
-          </div>
-        <?php } else { ?>
-        <?php }; ?>
-      <?php endwhile; ?>
-
-
-      <h2>Coming Soon</h2>
-
-      <?php while(has_sub_field('skill')): ?>
-
-        <?php if (get_sub_field('skill_type') == 'upcoming') {?>
-          <div class="singleSkill">
-            <i class="<?php the_sub_field('skill_icon') ?>"></i>
-            <p><?php the_sub_field('skill_name') ?></p>
-          </div>
-        <?php } else { ?>
-        <?php }; ?>
-      <?php endwhile; ?>
+      <ul class="skillsList">
+        <?php while(has_sub_field('skill')): ?>
+          <?php if (get_sub_field('skill_type') == 'upcoming') {?>
+            <li class="singleSkill">
+              <i class="<?php the_sub_field('skill_icon') ?>"></i>
+              <p><?php the_sub_field('skill_name') ?></p>
+            </li>
+          <?php }; ?>
+        <?php endwhile; ?>
+      </ul>
      
     </div>
   </section>

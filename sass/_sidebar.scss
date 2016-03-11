@@ -1,7 +1,23 @@
 aside {
-	width: 20%;
-	float: left;
+	width: 250px;
+	top: 0;
 	height: 100vh;
 	position: fixed;
 	z-index: 100;
+	.innerNav {
+		position: relative;
+		top:50%;
+		transform: translate(0, -50%);
+	}
+}
+
+.navLogo {
+	width: 150px;
+	margin-left: 20px;
+	margin-bottom: 30px;
+	opacity: 1;
+	transition: all 1s ease;
+	&.hidden {
+		opacity: 0;
+	}
 }

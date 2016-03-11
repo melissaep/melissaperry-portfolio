@@ -5,43 +5,28 @@ header {
 	justify-content: center;
 	align-items: center;
 	position: relative;
-}
-
-h1,
-p.tagline {
-	padding: 0;
-	margin: 0;
-	text-transform: uppercase;
-	font-weight: 700;
-	line-height: 1;
-	text-align: center;
-}
-
-h1 {
-	@include fontSizer(100);
-	text-shadow: 8px 8px 0 $cyan;
-	letter-spacing: 3px;
-}
-
-p.tagline {
-	@include fontSizer(34);
-	color: $darkgrey;
-}
-
-.logo.container {
-	padding: 50px;
-	background: white;
-	&::after {
-		height: 150%;
-		width: 160%;
-		top: -25%;
-		left: -18%;
-		background-size: 12px 12px;
-	}
-	&::before {
-		height: 80%;
-		width: 80%;
-		top: -25%;
-		left: -18%;
+	margin-bottom: 200px;
+	object {
+		width: 600px;
 	}
 }
+
+// h1,
+// p.tagline {
+// 	padding: 0;
+// 	margin: 0;
+// 	text-transform: uppercase;
+// 	font-weight: 700;
+// 	line-height: 1;
+// }
+
+// h1 {
+// 	@include fontSizer(60);
+// 	text-shadow: 8px 8px 0 $cyan;
+// 	letter-spacing: 3px;
+// }
+
+// p.tagline {
+// 	@include fontSizer(34);
+// 	color: $darkgrey;
+// }

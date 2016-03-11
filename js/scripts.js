@@ -65,6 +65,21 @@ scrollApp.calculate = function(){
     	$('.progressBar').css('top', percent);
     };
 
+    var logoFunction = function(){
+        $(window).on('scroll', function(){
+            var logo = $('.navLogo');
+            var windowPos = $(window).scrollTop();
+            var divPos = $('#home').offset();
+            var divPosHeight = (divPos.top + 400);
+            
+            if ( windowPos > divPosHeight ) {
+                console.log('hi');
+                logo.removeClass('hidden');
+            } else {
+                logo.addClass('hidden');
+            };
+        });  
+    };
     
 
 // DOCUMENT READY
@@ -72,8 +87,9 @@ $(function(){
 
 	console.log("It's working");
     $("a[href='#home']").parent().addClass("nav-active");
-	scrollApp.calculate();
-	scrollApp.menuItems();
+    logoFunction();
+    scrollApp.calculate();
+    scrollApp.menuItems();
 
     // Smoothscroll
 
