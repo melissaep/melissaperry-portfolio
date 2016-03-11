@@ -5,11 +5,49 @@ ul.portfolio {
 .portfolioItem {
 	display: flex;
 	flex-direction: row;
-	margin: 400px 0;
+	margin: 50px 0;
 	figure {
 		width: 40%;
+		&::after {
+			width: 300%;
+		}
 	}
+
 	.info {
 		width: 60%;
+		margin: 20px 40px;
+		padding: 20px 20px 20px 30px;
+		background: white;
+		z-index: -2;
+	}
+
+	h3 {
+		text-transform: uppercase;
+		position: relative;
+		z-index: -1;
+		margin-bottom: 5px;
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: -20px;
+			background: $lightgrey;
+			height: 200%;
+			width: 100%;
+			z-index: -2;
+		}
+	}
+	.skillsUsed {
+		margin: 0;
+		span {
+			font-weight: 700;
+		}
+		span:last-of-type {
+			display: none;
+		}
+	}
+	p {
+		z-index: 1;
 	}
 }

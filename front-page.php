@@ -66,7 +66,7 @@
               
               <p class="skillsUsed">
                 <?php while(has_sub_field('skills_used')): ?>
-                  <?php the_sub_field('skill_name'); ?><span>|</span>
+                  <?php the_sub_field('skill_name'); ?> <span>|</span>
                 <?php endwhile; ?>
               </p>
               

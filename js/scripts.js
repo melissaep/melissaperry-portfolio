@@ -21,7 +21,7 @@ scrollApp.menuItems = function(){
         for (var i=0; i < aArray.length; i++) {
             var theID = aArray[i];
             var divPos = $(theID).offset(); // get the offset of the div from the top of page
-            var divPosHeight = (divPos.top - 200);
+            var divPosHeight = (divPos.top - 400);
             var divHeight = $(theID).outerHeight(); // get the height of the div in question
 
             if (windowPos > divPosHeight && windowPos < (divPosHeight + divHeight)) {

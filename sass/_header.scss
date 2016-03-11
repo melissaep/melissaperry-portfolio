@@ -32,16 +32,16 @@ p.tagline {
 	padding: 50px;
 	background: white;
 	&::after {
-			height: 150%;
-			width: 160%;
-			top: -25%;
-			left: -18%;
-			background-size: 12px 12px;
-		}
-		&::before {
-			height: 80%;
-			width: 80%;
-			top: -25%;
-			left: -18%;
-		}
+		height: 150%;
+		width: 160%;
+		top: -25%;
+		left: -18%;
+		background-size: 12px 12px;
+	}
+	&::before {
+		height: 80%;
+		width: 80%;
+		top: -25%;
+		left: -18%;
+	}
 }
