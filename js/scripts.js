@@ -68,6 +68,7 @@ scrollApp.calculate = function(){
     var logoFunction = function(){
         $(window).on('scroll', function(){
             var logo = $('.navLogo');
+            var arrowUp = $('.arrowUp');
             var windowPos = $(window).scrollTop();
             var divPos = $('#home').offset();
             var divPosHeight = (divPos.top + 400);
@@ -75,8 +76,10 @@ scrollApp.calculate = function(){
             if ( windowPos > divPosHeight ) {
                 console.log('hi');
                 logo.removeClass('hidden');
+                arrowUp.removeClass('hidden');
             } else {
                 logo.addClass('hidden');
+                arrowUp.addClass('hidden');
             };
         });  
     };

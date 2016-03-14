@@ -1,8 +1,9 @@
 a {
-	color: #BA209B;
+	color: $darkgrey;
 	text-decoration: none;
+	transition: all 0.5s ease;
 	&:hover {
-		color: #D424B1;
+		color: $medgrey;
 	}
 }
 

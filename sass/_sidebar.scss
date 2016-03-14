@@ -4,10 +4,24 @@ aside {
 	height: 100vh;
 	position: fixed;
 	z-index: 100;
+	// border-right: 1px dashed $lightgrey;
 	.innerNav {
 		position: relative;
 		top:50%;
 		transform: translate(0, -50%);
+	}
+	.fa {
+		text-align: center;
+		@include fontSizer(40);
+		margin-top: 30px;
+		margin-left: 20px;
+	}
+	a {
+		opacity: 1;
+		transition: all 1s ease;
+		&.hidden {
+			opacity: 0;
+		}
 	}
 }
 

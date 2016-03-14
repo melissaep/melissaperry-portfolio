@@ -5,9 +5,16 @@ header {
 	justify-content: center;
 	align-items: center;
 	position: relative;
-	margin-bottom: 200px;
 	object {
 		width: 600px;
+	}
+	a {
+		display: block;
+		@include fontSizer(40);
+		text-align: center;
+		padding: 20px;
+		width: 100px;
+		margin: 0 auto;
 	}
 }
 

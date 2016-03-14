@@ -11,15 +11,6 @@
 @import 'brand';
 @import 'mixins';
 @import 'typography';
-@import 'navigation';
-@import 'sidebar';
-@import 'header';
-@import 'about';
-@import 'work';
-@import 'skills';
-@import 'contact';
-@import 'comments';
-@import 'footer';
 
 /*
 ====================================
@@ -32,7 +23,7 @@ html {
 }
 
 body {
-	color: #333;
+	color: $darkgrey;
 	font-family: $mainFont;
 	font-size: 16px;
 }
@@ -43,15 +34,20 @@ main {
 
 section {
 	min-height: 100vh;
-	padding-bottom: 200px;
+	padding: 50px 0 100px;
 }
 .container {
 	max-width: 1200px;
 	margin: 0 auto;
 }
 
-.inner-wrapper {
+.wrapper {
 	margin-left: 250px;
+}
+
+.innerWrapper {
+	width: 90%;
+	margin: 0 auto;
 }
 
 .content {
@@ -69,7 +65,8 @@ img {
 }
 
 // Grid background
-figure {
+figure,
+#contact .innerWrapper {
 	position: relative;
 	&::after {
 		content: "";
@@ -80,7 +77,7 @@ figure {
 		top: -10%;
 		left: 30px;
 		background: radial-gradient(circle, $cyan 30%, transparent 30%), radial-gradient(circle, $cyan 30%, transparent 30%);
-		background-size: 12px 12px;
+		background-size: 10px 10px;
 		z-index: -2;
 	}
 	&::before {
@@ -98,27 +95,36 @@ figure {
 
 
 h2 {
-	@include fontSizer(44);
+	@include fontSizer(54);
 	text-transform: uppercase;
-	letter-spacing: 1px;
+	letter-spacing: 2px;
 	position: relative;
 	padding-left: 30px;
 	color: $darkgrey;
-	margin: 50px 0;
+	margin: 50px 0 75px;
 	&::after {
 		left: 0;
 		content: '';
 		display: block;
 		position: absolute;
-		height: 60%;
+		height: 70%;
 		background: $cyan;
 		width: 100%;
-		top: 70%;
+		top: 75%;
 		transform: translate(0, -50%);
 		z-index: -1;
 	}
 }
 
+@import 'navigation';
+@import 'sidebar';
+@import 'header';
+@import 'about';
+@import 'work';
+@import 'skills';
+@import 'contact';
+@import 'comments';
+@import 'footer';
 
 
 

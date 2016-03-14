@@ -4,3 +4,21 @@
 		filter: grayscale(100%);
 	}
 }
+
+#about {
+	padding-top: 100px;
+	.wrapper {
+		.innerWrapper {
+			p {
+				float: left;
+				width: 60%;
+				@include fontSizer(20);
+				padding-right: 50px;
+			}
+			figure {
+				width: 35%;
+				float: left;
+			}
+		}
+	}
+}
