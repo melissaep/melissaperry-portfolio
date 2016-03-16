@@ -34,10 +34,10 @@ main {
 
 section {
 	min-height: 100vh;
-	padding: 50px 0 100px;
+	padding: 20px 0 100px;
 }
 .container {
-	max-width: 1200px;
+	max-width: 1080px;
 	margin: 0 auto;
 }
 
@@ -65,8 +65,10 @@ img {
 }
 
 // Grid background
-figure,
-#contact .innerWrapper {
+figure.grid,
+#contact .innerWrapper,
+.portfolioItem
+ {
 	position: relative;
 	&::after {
 		content: "";
@@ -95,13 +97,13 @@ figure,
 
 
 h2 {
-	@include fontSizer(54);
+	@include fontSizer(40);
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	position: relative;
 	padding-left: 30px;
 	color: $darkgrey;
-	margin: 50px 0 75px;
+	margin: 50px 0;
 	&::after {
 		left: 0;
 		content: '';
@@ -116,6 +118,41 @@ h2 {
 	}
 }
 
+// 404
+
+.lostPage {
+	max-width: 980px;
+	width: 100%;
+	padding: 40px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.lostPage h1 {
+	@include fontSizer(40);
+	text-shadow: 4px 4px 0 $cyan;
+	letter-spacing: 3px;
+	text-align: center;
+	text-transform: uppercase;
+}
+.lostPage a {
+	@include fontSizer(22);
+	text-transform: uppercase;
+	padding: 20px;
+	margin: 40px 0;
+	font-weight: 700;
+	background: $lightgrey;
+	margin: 0 auto;
+	text-align: center;
+	color: $darkgrey;
+	&:hover {
+		box-shadow: 3px 3px 0 $cyan;
+	}
+}
+
 @import 'navigation';
 @import 'sidebar';
 @import 'header';
@@ -126,9 +163,28 @@ h2 {
 @import 'comments';
 @import 'footer';
 
+@media (max-width: 800px) {
+	.wrapper {
+		margin-left: 200px;
+	}
+}
 
+@media (max-width: 650px) {
+	section {
+		min-height: 100vh;
+		padding: 20px 0 100px;
+	}
+	.wrapper {
+		margin: 0;
+	}
 
-
-
-
+	.innerWrapper {
+		width: 90%;
+		margin: 0 auto;
+	}
+	h2 {
+		width: 90%;
+		margin: 50px auto;
+	}
+}
 

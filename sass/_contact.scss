@@ -9,22 +9,37 @@
 			left: 30px;
 		}
 		&::before {
-			height: 30%;
-			width: 50%;
+			height: 70%;
+			width: 40%;
 			top: -10%;
 			left: 30px;
 		}
 	}
 	.innerInnerWrapper {
 		background: white;
-		width: 70%;
+		width: 80%;
 		margin-left: 70px;
 		padding: 20px 20px 20px 60px;
+		box-shadow: 5px 5px 0px $cyan;
+		display: flex;
+		flex-direction: row;
+		.contactInfo {
+			width: 80%;
+		}
 		p {
 			text-transform: uppercase;
 			@include fontSizer(30);
 			font-weight: 700;
 			padding: 0;
+			margin: 5px 0;
+		}
+		p.email {
+			text-transform: none;
+			font-weight: 500;
+			@include fontSizer(20);
+			a {
+				font-weight: 700
+			}
 		}
 		input,
 		textarea {
@@ -32,20 +47,115 @@
 			padding: 10px;
 			border: none;
 			border-bottom: 2px solid $lightgrey;
-			color: $medgrey;
-			width: 70%;
-			margin-top: 10px;
+			color: $darkgrey;
+			width: 100%;
+			margin-top: 5px;
+			transition: 0.5s all ease;
+			transition: all 0.5s ease;
+			&:hover,
+			&:focus {
+				outline: none;
+				box-shadow: 5px 4px 0px $cyan;
+			}
 		}
 		textarea {
-			height: 140px;
+			height: 100px;
 			resize: none;
 		}
 		input[type=submit] {
+			border: none;
 			background: $lightgrey;
 			color: $darkgrey;
+			padding: 10px 15px;
 			text-transform: uppercase;
-			border: none;
-			font-weight: 600;
+			font-weight: 700;
+			text-align: center;
+			transition: all 0.5s ease;
+			&:hover {
+				box-shadow: 5px 5px 0px $cyan;
+			}
+		}
+		.social {
+			margin: 10px 0;
+			padding: 0;
+			list-style: none;
+			float: left;
+			@include fontSizer(24);
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: 20%;
+			li {
+				margin: 5px;
+				padding: 15px;
+				a {
+					padding: 5px;
+				}
+			}
+		}
+		.wpcf7-not-valid-tip,
+		.wpcf7-validation-errors {
+			@include fontSizer(12);
+			text-align: center;
+			width: 100%;
+			text-transform: uppercase;
+			border:none;
+			color: red;
+			font-weight: 700;
+		}
+		br {
+			@include fontSizer(2);
+
+		}
+	}
+}
+
+@media (max-width: 900px) {
+	#contact {
+		.innerInnerWrapper {
+			padding: 10px;
+			margin-left: 0;
+			width: 90%;
+			input[type=submit] {
+				margin: 0 auto;
+			}
+			.ajax-loader {
+				display: block;
+				margin: 0 auto;
+			}
+		}
+	}
+}
+
+@media (max-width: 500px) {
+	#contact {
+		.innerWrapper {
+			padding: 30px 0;
+			overflow: hidden;
+			&::after {
+				height: 120%;
+				width: 90%;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+			&::before {
+				display: none;
+			}
+		}
+		.innerInnerWrapper {
+			width: 90%;
+			margin: 0 auto;
+			box-shadow: none;
+			flex-direction: column;
+			.contactInfo {
+				width: 100%;
+			}
+			.social {
+				flex-direction: row;
+				width: 100%;
+			}
 		}
 	}
 }

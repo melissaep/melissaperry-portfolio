@@ -6,7 +6,7 @@ header {
 	align-items: center;
 	position: relative;
 	object {
-		width: 600px;
+		max-width: 600px;
 	}
 	a {
 		display: block;
@@ -14,7 +14,7 @@ header {
 		text-align: center;
 		padding: 20px;
 		width: 100px;
-		margin: 0 auto;
+		margin: 30px auto 0;
 	}
 }
 
@@ -37,3 +37,21 @@ header {
 // 	@include fontSizer(34);
 // 	color: $darkgrey;
 // }
+
+@media (max-width: 850px) {
+	header object {
+		max-width: 500px;
+	}
+}
+
+@media (max-width: 750px) {
+	header object {
+		max-width: 400px;
+	}
+}
+
+@media (max-height: 650px) {
+	header object {
+		max-width: 100%;
+	}
+}

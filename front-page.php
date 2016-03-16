@@ -4,6 +4,13 @@
 <!-- /. Sidebar -->
 
 <!-- Main Content -->
+<div class="hamburgerWrapper">
+  <input class="menuCheck" type="checkbox">
+  <div class="hamburger">
+    <div></div>
+  </div>
+</div>
+
 <main>
   <header id="home">
     <div class="wrapper">
@@ -19,7 +26,7 @@
 
 <div class="main">
   <div class="container">
-  
+ 
   <aside>
     <div class="innerNav">
       <object class="navLogo hidden" type="image/svg+xml" data="wp-content/themes/portfolio/images/smallLogo.svg"></object>
@@ -41,7 +48,7 @@
       <div class="innerWrapper clearfix">
         <p><?php the_field('about_description'); ?></p>
         
-        <figure class="headshot">
+        <figure class="headshot grid">
           <?php $image = get_field('about_image'); ?>
           <img src="<?php echo $image['sizes']['large']?>" alt="<?php echo $image['alt'];?>">
         </figure>
@@ -71,17 +78,19 @@
                   <?php the_sub_field('type_of_project'); ?>
                 </h3>
                 
-                <p class="skillsUsed">
-                  <?php while(has_sub_field('skills_used')): ?>
-                    <?php the_sub_field('skill_name'); ?> <span>|</span>
-                  <?php endwhile; ?>
-                </p>
-                
-                <p class="shortDesc">
-                  <?php the_sub_field('short_description'); ?>
-                </p>
-        
-                <a class="live" href="<?php the_sub_field('link'); ?>" target="_blank">View Live</a>
+                <div class="infoDrawer clearfix">
+                  <p class="skillsUsed">
+                    <?php while(has_sub_field('skills_used')): ?>
+                      <?php the_sub_field('skill_name'); ?> <span>|</span>
+                    <?php endwhile; ?>
+                  </p>
+                  
+                  <p class="shortDesc">
+                    <?php the_sub_field('short_description'); ?>
+                  </p>
+                          
+                  <a class="live" href="<?php the_sub_field('link'); ?>" target="_blank">View Live</a>
+                </div>
               </div>
         
             </li>
@@ -102,9 +111,19 @@
 
         <ul class="skillsList skillsList1">
           <?php while(has_sub_field('skill')): ?>
-            <?php if (get_sub_field('skill_type') == 'current') {?>
+            <?php if (get_sub_field('skill_type') === 'current') {?>
               <li class="singleSkill">
                 <i class="<?php the_sub_field('skill_icon') ?>"></i>
+                <p><?php the_sub_field('skill_name') ?></p>
+              </li>
+            <?php }; ?>
+          <?php endwhile; ?>
+          <?php while(has_sub_field('skill')): ?>
+            <?php if (get_sub_field('skill_type') === 'currentSVG') {?>
+              <li class="singleSkill">
+                <div class="skillIcon">
+                  <object class="skillIcon" type="image/svg+xml" data="<?php the_sub_field('skill_icon') ?>"></object>
+                </div>
                 <p><?php the_sub_field('skill_name') ?></p>
               </li>
             <?php }; ?>
@@ -115,7 +134,7 @@
         
         <ul class="skillsList">
           <?php while(has_sub_field('skill')): ?>
-            <?php if (get_sub_field('skill_type') == 'upcoming') {?>
+            <?php if (get_sub_field('skill_type') === 'upcoming') {?>
               <li class="singleSkill">
                 <i class="<?php the_sub_field('skill_icon') ?>"></i>
                 <p><?php the_sub_field('skill_name') ?></p>
@@ -134,14 +153,31 @@
         <h2>Contact</h2>
 
         <div class="innerWrapper">
-          <div class="innerInnerWrapper">
-            <p>
-              <?php the_field('contact_description'); ?>
-            </p>
-            
-            <div>
+          <div class="innerInnerWrapper clearfix">
+            <div class="contactInfo">
+              <p>
+                <?php the_field('contact_description'); ?>
+              </p>
+              
+              <p class="email">Send me a message at <a href="mailto:<?php the_field('contact_email'); ?>"><?php the_field('contact_email'); ?></a> or through the form below.</p>
+              
               <?php the_field('contact_form'); ?>
             </div>
+
+            <ul class="social">
+              <li>
+                <a href="http://twitter.com/melissaep/" target="_blank"><i class="fa fa-twitter"></i></a>
+              </li>
+              <li>
+                <a href="http://instagram.com/melissaep/" target="_blank"><i class="fa fa-instagram"></i></a>
+              </li>
+              <li>
+                <a href="https://ca.linkedin.com/in/melissaep"><i class="fa fa-linkedin" target="_blank"></i></a>
+              </li>
+              <li>
+                <a href="http://github.com/melissaep/" target="_blank"><i class="fa fa-github"></i></a>
+              </li>
+            </ul>
           </div>
         </div>
       

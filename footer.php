@@ -1,6 +1,7 @@
 	<footer>
 	  <div class="container">
-	    <p>Coded with love by Melissa Perry</p>
+	    <p>Designed and developed</p>
+	    <p>by Melissa Perry &copy;2016</p>
 	  </div>
 	</footer>
 </main>

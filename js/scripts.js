@@ -96,20 +96,42 @@ $(function(){
 
     // Smoothscroll
 
-    $(function() {
-      $('a[href*="#"]:not([href="#"])').click(function() {
-        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-          var target = $(this.hash);
-          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-          if (target.length) {
-            $('html, body').animate({
-              scrollTop: target.offset().top
-            }, 1000);
-            return false;
-          }
-        }
-      });
-    });
+  $('a[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+
+  $(".menuCheck").on('click', function() {
+      if(this.checked) {
+        $('aside').fadeIn();
+      } else {
+        $('aside').fadeOut(function(){
+            $(this).css("display", "");
+        });
+      }
+  });
+
+  var menuA = $('.menu-item').find('a');
+  var menuBox = $('.menuCheck');
+
+  $(menuA).on('click', function() {
+    if (menuBox.checked = true) {
+        $(menuBox).attr('checked', false);
+        $('aside').fadeOut(function(){
+            $(this).css("display", "");
+        });
+    };
+  });
+
+
 
 });
 

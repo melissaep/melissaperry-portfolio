@@ -2,33 +2,42 @@ ul.portfolio {
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
+	padding-left: 0;
 }
 .portfolioItem {
 	display: flex;
 	flex-direction: row;
-	margin: 50px 0;
+	margin: 30px 0 40px;
+	position: relative;
+	&::after {
+		width: 100%;
+		height: 105%;
+		top: -8%;
+	}
+	&::before {
+		width: 30%;
+	}
 	figure {
 		width: 40%;
-		&::after {
-			width: 300%;
-			height: 110%;
-		}
 	}
 
 	.info {
 		width: 55%;
 		margin: 40px 0;
-		padding: 20px 30px 20px 40px;
+		padding: 20px 30px 10px 40px;
 		background: white;
-		z-index: 0;
+		z-index: 1;
+		position: relative;
+		box-shadow: 5px 5px 0px $cyan;
 	}
 
 	h3 {
-		@include fontSizer(22);
+		@include fontSizer(20);
 		text-transform: uppercase;
 		position: relative;
 		z-index: -1;
 		margin: 10px 0;
+		padding-right: 10px;
 		&::after {
 			content: '';
 			display: block;
@@ -52,16 +61,16 @@ ul.portfolio {
 			content: '';
 			display: block;
 			position: absolute;
-			top: 45%;
+			top: 0;
 			left: -20px;
 			background: $lightgrey;
-			height: 100%;
+			height: 120%;
 			width: calc(100% + 20px);
 			z-index: -2;
 		}
 		span {
 			font-weight: 700;
-			padding: 0 3px;
+			padding: 0 2px;
 		}
 		span:last-of-type {
 			display: none;
@@ -72,22 +81,109 @@ ul.portfolio {
 	}
 	.shortDesc {
 		padding-top: 10px;
+		font-family: $secondFont;
+		@include fontSizer(14);
 	}
 	a.live {
-		border: 2px solid $cyan;
-		background: $cyan;
+		background: $lightgrey;
 		color: $darkgrey;
 		padding: 10px 15px;
 		text-transform: uppercase;
 		font-weight: 700;
-		color: black;
 		display: inline-block;
 		float: right;
 		margin-right: 20px;
 		text-align: center;
 		transition: all 0.5s ease;
 		&:hover {
-			background: white;
+			box-shadow: 5px 5px 0px $cyan;
+		}
+	}
+	.infoDrawer {
+		margin-bottom: 10px;
+	}
+}
+
+@media (max-width: 900px) {
+	.portfolioItem {
+		flex-direction: column;
+		justify-content: center;
+		margin: 30px auto 70px;
+		max-width: 425px;
+		width: 100%;
+		&::after {
+			height: 110%;
+			top: -5%;
+		}
+		.info {
+			width: 90%;
+			margin: 0;
+			margin-left: 0;
+			margin-top: -10px;
+			padding: 20px 30px;
+		}
+		figure {
+			width: 90%;
+		}
+		a.live {
+			margin-right: 0;
 		}
 	}
 }
+
+@media (max-width: 650px) {
+	.portfolioItem {
+		h3 {
+		@include fontSizer(18);
+		}
+	}
+}
+
+@media (max-width: 500px) {
+	.portfolioItem {
+		&::after {
+			width: 90%;
+			height: 110%;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		&::before {
+			display: none;
+		}
+		h3 {
+			@include fontSizer(20);
+			text-transform: uppercase;
+			position: relative;
+			z-index: -1;
+			margin: 10px 0;
+			padding-right: 10px;
+			&::after {
+				content: '';
+				display: block;
+				position: absolute;
+				top: 35%;
+				left: -10px;
+				background: $lightgrey;
+				height: 60px;
+				width: calc(100% + 20px);
+				z-index: -2;
+			}
+		}
+		.skillsUsed {
+			&::after {
+				left: -10px;
+			}
+		}
+		figure {
+			width: 95%;
+			margin: 0 auto;
+		}
+		.info {
+			width: 100%;
+			box-shadow: none;
+			padding: 20px;
+		}
+	}
+}
+

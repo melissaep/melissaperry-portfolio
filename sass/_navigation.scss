@@ -6,7 +6,7 @@ ul.menu {
 		padding: 0;
 		list-style: none;
 		a {
-			color: #333;
+			color: $darkgrey;
 			text-transform: uppercase;
 		}
 	}
@@ -42,6 +42,9 @@ ul.menu {
 			a {
 				color: $darkgrey;
 			}
+			span.title {
+				color: #333;
+			}
 		}
 		li {
 		}
@@ -51,12 +54,12 @@ ul.menu {
 			align-items: center;
 			color: $medgrey;
 			&:hover {
-				color: $darkgrey;
+				color: #333;
 			}
 		}
 		span.title {
 			@include fontSizer(12);
-			font-weight: 400;
+			font-weight: 600;
 			padding-left: 15px;
 			letter-spacing: 1px;
 		}
@@ -71,7 +74,6 @@ ul.menu {
 		}
 	}
 }
-
 
 @keyframes bounce {
   from, 10%, 26%, 40%, to {
@@ -100,4 +102,29 @@ ul.menu {
   animation-iteration-count: infinite;
   animation-duration: 2s;
   animation-fill-mode: both;
+}
+
+
+@media (max-width: 650px) {
+	.sideNav {
+		position: relative;
+		margin: 0 auto;
+		.progressBar {
+			display: none;
+		}
+		&::after {
+			display: none;
+		}
+		ul.menu {
+			margin: 0 auto;
+			justify-content: center;
+			align-items: center;
+			li {
+				width: 150px;
+			}
+			span.title {
+				font-weight: 700;
+			}
+		}
+	}
 }

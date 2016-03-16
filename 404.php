@@ -1,11 +1,10 @@
 <?php get_header(); ?>
 
 <div class="main">
-  <div class="container">
+  <div class="container lostPage">
 
-    <h1>Not Found</h1>
-    <p>Apologies, but the page you requested could not be found. Perhaps searching will help.</p>
-    <?php get_search_form(); ?>
+    <h1>Oops! Looks like you got lost.</h1>
+    <a href="http://melissaperry.io">Let's get you back to the main site!</a>
 
   </div> <!-- /.container -->
 </div> <!-- /.main -->
